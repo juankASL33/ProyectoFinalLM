@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Token</title>
+</head>
+<body>
+    <h1>Verificar Token</h1>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    {% if result %}
+        <p>Verificación: {{ result.status }}</p>
+    {% endif %}
+    <a href="/">Volver al Inicio</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Jugador - Game Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalle del Jugador</h1>
+        {% if jugador %}
+            <p>Nombre: {{ jugador.name }}</p>
+            <p>Código de Jugador: {{ jugador.tag }}</p>
+            <p>Nivel del Ayuntamiento: {{ jugador.townHallLevel }}</p>
+            <p>Copas: {{ jugador.trophies }}</p>
+            <p>Mejor marca de Copas: {{ jugador.bestTrophies }}</p>
+            <p>Estrellas de Guerra: {{ jugador.warStars }}</p>
+            <p>Nivel de Experiencia: {{ jugador.expLevel }}</p>
+            <p>Rol: {{ jugador.role }}</p>
+            <p>Preferencia de Guerra: {{ jugador.warPreference }}</p>
+            <p>Aportaciones a la Capital del Clan: {{ jugador.clanCapitalContributions }}</p>
+            <p>Donaciones: {{ jugador.donations }}</p>
+            <p>Donaciones recibidas: {{ jugador.donationsReceived }}</p>
+            <h2>Logros</h2>
+            <ul>
+                {% for achievement in jugador.achievements %}
+                    <li>{{ achievement.name }} - {{ achievement.stars }} estrellas - {{ achievement.value }} / {{ achievement.target }}</li>
+                {% endfor %}
+            </ul>
+            <h2>Tropas</h2>
+            <ul>
+                {% for troop in jugador.troops %}
+                    <li>{{ troop.name }} - Nivel: {{ troop.level }} (Máximo: {{ troop.maxLevel }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron detalles del jugador.</p>
+        {% endif %}
+        <a href="/">Volver a Inicio</a>
+    </div>
+</body>
+</html>

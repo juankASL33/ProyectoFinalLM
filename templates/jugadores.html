@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugadores - Clash of Clans Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Buscar Jugador</h1>
+    <form action="/jugadores" method="post">
+        <input type="text" name="nombre" placeholder="Código del jugador">
+        <button type="submit">Buscar</button>
+    </form>
+    {% if jugador %}
+    <h2>Información del Jugador</h2>
+    <p>Nombre: {{ jugador.name }}</p>
+    <p>Nivel de Experiencia: {{ jugador.expLevel }}</p>
+    {% endif %}
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

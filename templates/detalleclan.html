@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Clan - Game Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalle del Clan</h1>
+        {% if clan %}
+            <p>Nombre del Clan: {{ clan.name }}</p>
+            <p>Código del Clan: {{ clan.tag }}</p>
+            <p>Nivel del Clan: {{ clan.clanLevel }}</p>
+            <p>Puntos del Clan: {{ clan.clanPoints }}</p>
+            <p>Miembros: {{ clan.members }}</p>
+            <h2>Miembros del Clan</h2>
+            <ul>
+                {% for member in clan.memberList %}
+                    <li>{{ member.name }} - {{ member.role }} - Nivel de Ayuntamiento: {{ member.townHallLevel }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron detalles del clan.</p>
+        {% endif %}
+        <a href="/">Volver a Inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Game Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a Game Search</h1>
+        <p>¡Busca tus personajes y estructuras favoritas!</p>
+        <form action="/search" method="post">
+            <select name="type">
+                <option value="player">Jugador</option>
+                <option value="clan">Clan</option>
+            </select>
+            <input type="text" name="term" placeholder="Ingrese el nombre o código">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+</body>
+</html>

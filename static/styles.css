@@ -1,0 +1,81 @@
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, p {
+    color: #00ff00;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form select, form input, form button {
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    border-radius: 5px;
+}
+
+form input, form select {
+    background-color: #2a2a2a;
+    color: #00ff00;
+}
+
+form button {
+    background-color: #00ff00;
+    color: #0f0f0f;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #00cc00;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #2a2a2a;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ul li a {
+    display: block;
+}
+
+.error {
+    color: #ff0000;
+}
