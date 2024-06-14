@@ -1,9 +1,12 @@
 import requests
 from flask import Flask, render_template, request, redirect, url_for
+from dotenv import load_dotenv
+import os
 
-# Token de autorización y encabezados
+load_dotenv()
+
 headers = {
-    'Authorization': 'Bearer (token)',
+    'Authorization': f'Bearer {os.getenv("CLASH_API_TOKEN")}',
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 }
@@ -87,7 +90,6 @@ def detalle_clan(clan_tag):
         return render_template('detalleclan.html', clan=clan)
     except Exception as e:
         return render_template('clanes.html', error=str(e))
-
 
 if __name__ == '__main__':
     app.run(debug=True)
