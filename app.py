@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 # Token de autorización y encabezados
 headers = {
-    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImM4NThmODVlLWZlYmUtNDIzYi04ZjRkLTRkMjZhODA5NGFjNSIsImlhdCI6MTcxODM1MjgzMSwic3ViIjoiZGV2ZWxvcGVyL2M1ZWMzNDUzLTIwOWMtODYxOS1lOGY5LWQyZDI2N2M1OWFmMyIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjgwLjMxLjcxLjE0MiJdLCJ0eXBlIjoiY2xpZW50In1dfQ.x5G7LfJYIBDBpxSDChhck3A3egQYqJd5Ng8XtTJifTV5cOY75cjTrcE8jqjTTlK9CUQa049irIyz_JVe3_tWhg',
+    'Authorization': 'Bearer (token)',
     'Content-Type': 'application/json',
     'Accept': 'application/json'
 }
