@@ -2,10 +2,8 @@ import requests
 from dotenv import load_dotenv
 import os
 
-# Cargar variables de entorno desde el archivo .env
 load_dotenv()
 
-# Token de autorización y encabezados
 headers = {
     'Authorization': f'Bearer {os.getenv("CLASH_API_TOKEN")}',
     'Content-Type': 'application/json',
