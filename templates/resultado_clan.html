@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la Búsqueda de Clanes - Game Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Clanes Encontrados</h1>
+        <ul>
+        {% for clan in clanes %}
+            <li>
+                <a href="{{ url_for('detalle_clan', clan_tag=clan.tag[1:]) }}">
+                    {{ clan.name }} - Nivel: {{ clan.clanLevel }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+        <a href="/">Volver a Inicio</a>
+    </div>
+</body>
+</html>

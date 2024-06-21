@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jugadores del Clan {{ clan_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Jugadores del Clan {{ clan_name }}</h1>
+        <ul>
+        {% for jugador in jugadores %}
+            <li>
+                <a href="{{ url_for('detalle_jugador', player_tag=jugador.tag[1:]) }}">
+                    {{ jugador.name }} - Nivel: {{ jugador.expLevel }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+        <a href="/">Volver a Inicio</a>
+    </div>
+</body>
+</html>
