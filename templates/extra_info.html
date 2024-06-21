@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Adicional del Jugador - Game Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Información Adicional del Jugador: {{ jugador_name }}</h1>
+        <h2>Héroes</h2>
+        <ul>
+        {% for hero in extra_info.heroes %}
+            <li>{{ hero.name }} - Nivel: {{ hero.level }} (Máximo: {{ hero.maxLevel }})</li>
+        {% endfor %}
+        </ul>
+        <h2>Hechizos</h2>
+        <ul>
+        {% for spell in extra_info.spells %}
+            <li>{{ spell.name }} - Nivel: {{ spell.level }} (Máximo: {{ spell.maxLevel }})</li>
+        {% endfor %}
+        </ul>
+        <h2>Tropas</h2>
+        <ul>
+        {% for troop in extra_info.troops %}
+            <li>{{ troop.name }} - Nivel: {{ troop.level }} (Máximo: {{ troop.maxLevel }})</li>
+        {% endfor %}
+        </ul>
+        <a href="/">Volver a Inicio</a>
+    </div>
+</body>
+</html>
